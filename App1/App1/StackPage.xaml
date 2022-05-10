@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.StackPage">
+    <!--Solo puede haber un elemento en el ContentPage-->
+    <!--Por default el StackLayout se acomoda por fill y ocupa toda la pantalla--> 
+    <StackLayout Padding="0,40,0,0" Orientation="Horizontal" BackgroundColor="Red" Spacing="15" VerticalOptions="Center" HorizontalOptions="Center">
+        <!--Se pueden poner otros StackLayout adentro de uno-->
+        <StackLayout>
+            <!--<Image Source="https://somoskudasai.com/wp-content/uploads/2020/11/portada_kanojo-okarishimasu-36.jpg"></Image>-->
+            <Button Text="A"></Button>
+        <Label Text="Label 1" BackgroundColor="Blue"></Label>
+        </StackLayout>
+        <Label Text="Label 1" BackgroundColor="Blue"></Label>
+        <Label Text="Label 1" BackgroundColor="Blue"></Label>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.BienvenidosPage">
+    
+    <!--El evento clicked llama al método en el código subsayente, vs sugiere crearlo-->
+    <!--<Button HorizontalOptions="Center" VerticalOptions="Center" Text="Mostrar Mensaje" Clicked="Button_Clicked"></Button>-->
+    
+    <!--Un contenedor-->
+    <StackLayout BindingContext="{x:Reference slider}" HorizontalOptions="Center" VerticalOptions="Center">
+
+        <!--Se puede mover el atributo BindingContext al stacklayout para que todo lo que esta en este contenedor haga referencia al slider, se hereda-->
+        <BoxView Color="Red" Opacity="{Binding Value}"></BoxView>
+        
+        <!--Se quiere vincular la propiedad text de Label a Value de slider.
+        DataBinding, Extension de marcado, se usan llaves para indicarlo, se hace la unión con binding, se hace
+        referencia a otro Markup Extentio, luego el nombre del objeto en este archivo y al final el atributo a modificar-->
+        <!--Source es para especificar el objeto fuente o indicar a el elemento aquí. Pero el atributo binding context
+        ayuda a hacer la referencia mas global a este Label, así el Source no será necesario-->
+        <Label x:Name="label" Text="{Binding Value,
+            StringFormat='Número: {0:F2}'}" 
+            Opacity="{Binding Value}">
+        </Label> <!--Se busca el atributo en el namespace de x: y es como un id-->
+        
+        <Slider x:Name="slider" ></Slider>
+    </StackLayout>
+    
+</ContentPage>
